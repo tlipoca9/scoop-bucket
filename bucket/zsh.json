@@ -9,7 +9,7 @@
         }
     },
     "post_install": [
-        "Copy-Item -Path $dir\\etc -Destination $env:GIT_INSTALL_ROOT\\etc -Recurse -Force",
-        "Copy-Item -Path $dir\\usr -Destination $env:GIT_INSTALL_ROOT\\usr -Recurse -Force"
+        "Copy-Item -Path $dir\\etc -Destination $env:GIT_INSTALL_ROOT -Recurse -Force",
+        "Copy-Item -Path $dir\\usr -Destination $env:GIT_INSTALL_ROOT -Recurse -Force"
     ]
 }
