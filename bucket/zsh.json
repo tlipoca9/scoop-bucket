@@ -14,6 +14,12 @@
         "New-Item -Path $scoopdir\\shims\\zsh.shim -Value \"path = $env:GIT_INSTALL_ROOT\\bin\\sh.exe\nargs = '--login' '-i' '-c' 'zsh'\" | Out-Null",
         "Copy-Item -Path $scoopdir\\shims\\git.exe -Destination $scoopdir\\shims\\zsh.exe -Force -ErrorAction SilentlyContinue"
     ],
+    "pre_uninstall": [
+        "Remove-Item -Path $scoopdir\\shims\\zsh.shim -Force -ErrorAction SilentlyContinue",
+        "Remove-Item -Path $scoopdir\\shims\\zsh.exe -Force -ErrorAction SilentlyContinue",
+        "Get-ChildItem -Path $dir\\etc | ForEach-Object { Remove-Item -Path $env:GIT_INSTALL_ROOT\\etc\\$_ -Force }",
+        "Get-ChildItem -Path $dir\\usr | ForEach-Object { Remove-Item -Path $env:GIT_INSTALL_ROOT\\usr\\$_ -Force }"
+    ],
     "depends": [
         "git"
     ]
