@@ -5,7 +5,8 @@
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://mirror.msys2.org/msys/x86_64/zsh-5.9-2-x86_64.pkg.tar.zst"
+            "url": "https://mirror.msys2.org/msys/x86_64/zsh-5.9-2-x86_64.pkg.tar.zst",
+            "hash": "b88409ec82332af0524addac7259241812448f0f94007cea1a356016cc568826"
         }
     },
     "post_install": [
