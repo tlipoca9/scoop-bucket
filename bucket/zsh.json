@@ -18,8 +18,8 @@
         "",
         "Remove-Item -Path $scoopdir\\shims\\zsh.shim -Force -ErrorAction SilentlyContinue",
         "Remove-Item -Path $scoopdir\\shims\\zsh.exe -Force -ErrorAction SilentlyContinue",
-        "Get-ChildItem -Path $dir\\etc -Recurse | ForEach-Object { \"Removing $env:GIT_INSTALL_ROOT\\etc\\$_.FullName.TrimStart($dir\\etc)\"; Remove-Item -Path $env:GIT_INSTALL_ROOT\\etc\\$_.FullName.TrimStart($dir\\etc) -Force }",
-        "Get-ChildItem -Path $dir\\usr -Recurse | ForEach-Object { \"Removing $env:GIT_INSTALL_ROOT\\usr\\$_.FullName.TrimStart($dir\\usr)\"; Remove-Item -Path $env:GIT_INSTALL_ROOT\\usr\\$_.FullName.TrimStart($dir\\usr) -Force }"
+        "Get-ChildItem -Path $dir\\etc -Recurse | ForEach-Object { \"Removing $env:GIT_INSTALL_ROOT\\etc\\$_.FullName.Substring($dir.Length + 1)\" | Remove-Item -Force -ErrorAction SilentlyContinue }",
+        "Get-ChildItem -Path $dir\\usr -Recurse | ForEach-Object { \"Removing $env:GIT_INSTALL_ROOT\\usr\\$_.FullName.Substring($dir.Length + 1)\" | Remove-Item -Force -ErrorAction SilentlyContinue }"
     ],
     "depends": [
         "git"
