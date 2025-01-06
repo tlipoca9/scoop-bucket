@@ -1,0 +1,15 @@
+{
+    "version": "5.9-2",
+    "description": "A very advanced and programmable command interpreter (shell) for UNIX",
+    "homepage": "https://www.zsh.org/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://mirror.msys2.org/msys/x86_64/zsh-5.9-2-x86_64.pkg.tar.zst"
+        }
+    },
+    "post_install": [
+        "Copy-Item -Path $dir\\etc -Destination $env:GIT_INSTALL_ROOT\\etc -Recurse -Force",
+        "Copy-Item -Path $dir\\usr -Destination $env:GIT_INSTALL_ROOT\\usr -Recurse -Force"
+    ]
+}
