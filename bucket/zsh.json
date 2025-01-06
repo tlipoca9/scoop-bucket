@@ -11,7 +11,7 @@
     "post_install": [
         "Copy-Item -Path $dir\\etc -Destination $env:GIT_INSTALL_ROOT -Recurse -Force -ErrorAction SilentlyContinue",
         "Copy-Item -Path $dir\\usr -Destination $env:GIT_INSTALL_ROOT -Recurse -Force -ErrorAction SilentlyContinue",
-        "New-Item -Path $scoopdir\\shims\\zsh.shim -Value \"path = $env:GIT_INSTALL_ROOT\\bin\\sh.exe\nargs = '--login' '-i' '-c' 'zsh'\"",
+        "New-Item -Path $scoopdir\\shims\\zsh.shim -Value \"path = $env:GIT_INSTALL_ROOT\\bin\\sh.exe\nargs = '--login' '-i' '-c' 'zsh'\" | Out-Null",
         "Copy-Item -Path $scoopdir\\shims\\git.exe -Destination $scoopdir\\shims\\zsh.exe -Force -ErrorAction SilentlyContinue"
     ],
     "depends": [
