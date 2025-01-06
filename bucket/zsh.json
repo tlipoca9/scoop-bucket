@@ -17,8 +17,8 @@
     "pre_uninstall": [
         "Remove-Item -Path $scoopdir\\shims\\zsh.shim -Force -ErrorAction SilentlyContinue",
         "Remove-Item -Path $scoopdir\\shims\\zsh.exe -Force -ErrorAction SilentlyContinue",
-        "Get-ChildItem -Path $dir\\etc | ForEach-Object { Remove-Item -Path $env:GIT_INSTALL_ROOT\\etc\\$_ -Force }",
-        "Get-ChildItem -Path $dir\\usr | ForEach-Object { Remove-Item -Path $env:GIT_INSTALL_ROOT\\usr\\$_ -Force }"
+        "Get-ChildItem -Path $dir\\etc | ForEach-Object { \"Removing $env:GIT_INSTALL_ROOT\\etc\\$_.Name\"; Remove-Item -Path $env:GIT_INSTALL_ROOT\\etc\\$_.Name -Force -Recurse }",
+        "Get-ChildItem -Path $dir\\usr | ForEach-Object { \"Removing $env:GIT_INSTALL_ROOT\\usr\\$_.Name\"; Remove-Item -Path $env:GIT_INSTALL_ROOT\\usr\\$_.Name -Force -Recurse }"
     ],
     "depends": [
         "git"
