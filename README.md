@@ -7,6 +7,6 @@
 run the following:
 
 ```pwsh
-scoop bucket add tlipoca9-scoop-bucket https://github.com/tlipoca9/scoop-bucket
-scoop install tlipoca9-scoop-bucket/<manifestname>
+scoop bucket add tlipoca9_scoop-bucket https://github.com/tlipoca9/scoop-bucket
+scoop install tlipoca9_scoop-bucket/<manifestname>
 ```
